@@ -24,10 +24,12 @@ namespace ToDoListApp.Data.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Employee>(entity =>
+            modelBuilder.Entity<Member>(entity =>
             {
                 entity.HasKey(e => e.Id);
+                entity.HasIndex(e => e.Email).IsUnique();
                 entity.HasMany(d => d.Tasks);
+                
             });
 
             modelBuilder.Entity<ToDoTask>(entity =>
@@ -36,7 +38,7 @@ namespace ToDoListApp.Data.Context
             });
         }
 
-        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Member> Members { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<ToDoTask> ToDoTask { get; set; }
     }

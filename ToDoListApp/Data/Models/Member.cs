@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ToDoListApp.Data.Models
 {
-    public partial class Employee
+    public partial class Member
     {
         [Key]
         public int Id { get; set; }
@@ -12,6 +12,7 @@ namespace ToDoListApp.Data.Models
         public Role Role { get; set; }
         public List<ToDoTask> Tasks { get; set; }
         public bool HasAccess { get; set; }
+        public int TotalPoints { get; set; }
 
     }
 }
