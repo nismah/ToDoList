@@ -50,7 +50,7 @@ namespace ToDoListApp.Services
                 }
                 else
                 {
-                    var allMembers = context.Members.ToList();
+                    var allMembers = context.Members.Include(x => x.Role).ToList();
 
                     if (allMembers != null)
                     {

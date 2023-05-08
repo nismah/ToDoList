@@ -1,0 +1,35 @@
+﻿@model List<ToDoListUI.Models.MemberViewModel>
+@{
+    ViewBag.Title = "Member";
+}
+
+<h2>Members</h2>
+<table style="width:100%">
+    <tr>
+        <th colspan="2">UserId</th>
+        <th colspan="4">Name</th>
+        <th colspan="4">Email</th>
+        <th colspan="2">HasAccess</th>
+        <th colspan="2">Role</th>
+        <th colspan="2">TotalPoints</th>
+        <th colspan="2">Author</th>
+        <th colspan="2">FavouriteQuote</th>
+    </tr>
+    @{ foreach (var member in Model)
+        {
+            <tr>
+                <td colspan="2">@member.Id</td>
+                <td colspan="4">@member.Name</td>
+                <td colspan="4">@member.Email</td>
+                <td colspan="2">@member.HasAccess</td>
+                <td colspan="2">@member.Role.EmployeeRole</td>
+                <td colspan="2">@member.TotalPoints</td>
+                <td colspan="2">@member.FavouriteQuote.Author</td>
+                <td colspan="2">@member.FavouriteQuote.Content</td>
+            </tr>
+
+        }
+    }
+</table>
+
+

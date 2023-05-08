@@ -19,6 +19,7 @@ namespace ToDoListUI.Controllers
                 HttpContext.GetOwinContext().Authentication.Challenge(new AuthenticationProperties { RedirectUri = "/" },
                     OpenIdConnectAuthenticationDefaults.AuthenticationType);
             }
+            //create user here
         }
 
         public void SignOut()
@@ -40,5 +41,6 @@ namespace ToDoListUI.Controllers
 
             return View();
         }
+
     }
 }
